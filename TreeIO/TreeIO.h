@@ -1,9 +1,8 @@
 #ifndef ONIAIO
 #define ONIAIO
 
-#include"../TreeIO/TreeReader.h"
-#include"../TreeIO/TreeWriter.h"
-#include"Data.h"
+#include"TreeReader.h"
+#include"TreeWriter.h"
 
 template<typename InputData>
 class Reader
@@ -17,8 +16,6 @@ class Reader
         in.registerInput(&reader);
     }
 
-    void buildIndex(const char* indexName) { reader.buildIndex(indexName);}
-
     Long64_t getEntries() const { return reader.getEntries(); }
 
     const InputData* readEntry(Long64_t entry)
@@ -26,7 +23,6 @@ class Reader
         reader.readEntry(entry);
         return &in;
     }
-    Long64_t findEntryByIndex(Long64_t index) {return reader.findEntryByIndex(index);}
 };
 
 template<typename OutputData>

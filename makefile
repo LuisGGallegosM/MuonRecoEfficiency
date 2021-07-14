@@ -1,10 +1,10 @@
 
 all:
 	$(MAKE) -C TreeIO
-	$(MAKE) -C OniaIO
 	$(MAKE) -C RootUtils
+	$(MAKE) -C MuRecoEff
 
 clear:
 	$(MAKE) clear -C TreeIO
-	$(MAKE) clear -C OniaIO
 	$(MAKE) clear -C RootUtils
+	$(MAKE) clear -C MuRecoEff
