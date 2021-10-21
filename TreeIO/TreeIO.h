@@ -29,16 +29,16 @@ template<typename OutputData>
 class Writer
 {
     TreeWriter writer;
+    OutputData output;
 
     public:
-    OutputData output;
 
     Writer(TTree* treeInput) :  writer(treeInput)
     {
         output.registerOutput(&writer);
     }
 
-    void writeEntry() { writer.writeEntry();}
+    void writeEntry(const OutputData* out) { output=*out; writer.writeEntry();}
 };
 
 #endif
